@@ -13,7 +13,7 @@ const AddTutorial = ({ getTutorials }) => {
     setDescription("");
   };
 
-  //! POST - CRUD (CREATE)
+  //! POST - CRUD (Create)
   const addTutorial = async (newTutor) => {
     const url = "https://tutorials-api-cw.herokuapp.com/api/tutorials";
     try {

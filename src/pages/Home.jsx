@@ -1,7 +1,7 @@
 import AddTutorial from "../components/AddTutorial";
 import TutorialList from "../components/TutorialList";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
@@ -11,9 +11,7 @@ const Home = () => {
   //? CRUD: (GET-READ)
   const getTutorials = async () => {
     try {
-      // destr on the air
       const { data } = await axios(url);
-
       console.log(data);
       setTutorials(data);
     } catch (error) {
@@ -26,12 +24,10 @@ const Home = () => {
     getTutorials();
   }, []);
 
-  // setTutorials(data)
-
   return (
     <>
       <AddTutorial getTutorials={getTutorials} />
-      <TutorialList tutorials={tutorials} getTutorials={getTutorials} />
+      <TutorialList tutor={tutorials} getTutorials={getTutorials} />
     </>
   );
 };
